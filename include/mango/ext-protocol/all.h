@@ -5,6 +5,7 @@
  * TODO remove it and refactor for other files
  */
 
+#include "mango/ext-protocol/background-effect.h"
 #include "mango/ext-protocol/ext-workspace.h"
 #include "mango/ext-protocol/foreign-toplevel.h"
 #include "mango/ext-protocol/hdr.h"

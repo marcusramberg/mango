@@ -7,6 +7,7 @@
 #include "mango/common/util.h"
 #include "mango/dispatch/bind.h"
 #include "mango/draw/title-message-bar.h"
+#include "mango/ext-protocol/background-effect.h"
 #include "mango/ext-protocol/ext-workspace.h"
 #include "mango/ext-protocol/foreign-toplevel.h"
 #include "mango/ext-protocol/hdr.h"
@@ -1432,6 +1433,7 @@ void handle_output_frame(struct wl_listener *listener, void *data) {
 		monitor_stop_skip_frame_timer(m);
 	}
 
+	background_effect_sync_all();
 	mango_scene_output_commit(m->scene_output, &m->pending);
 
 skip:

@@ -11,6 +11,7 @@
 #include "mango/config/watcher.h"
 #include "mango/dispatch/bind.h"
 #include "mango/draw/text-node.h"
+#include "mango/ext-protocol/background-effect.h"
 #include "mango/ext-protocol/ext-workspace.h"
 #include "mango/ext-protocol/foreign-toplevel.h"
 #include "mango/ext-protocol/hdr.h"
@@ -671,6 +672,8 @@ void setup(void) {
 	server.tearing_new_object_listener.notify = handle_tearing_new_object;
 	wl_signal_add(&server.tearing_control->events.new_object,
 				  &server.tearing_new_object_listener);
+
+	background_effect_init(server.display);
 
 	/* Creates an output layout, which a wlroots utility for working with an
 	 * arrangement of screens in a physical layout. */
